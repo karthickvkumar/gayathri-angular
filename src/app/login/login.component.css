@@ -1,0 +1,6 @@
+.active{
+    font-weight: 600;
+    background-color: blueviolet;
+    text-decoration: underline;
+    color: white;
+}
