@@ -7,18 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  textMessage = "Hello, Good Morning";
-  selectedColor = 'red';
-  selectedCSS = false;
+  userName: string = '';
+  password: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  printMessage(){
-    let message = "sdfsd";
-    const pi = 3.14;
+  onLogin(): any{
+    console.log(this.userName, this.password )
   }
 
 }

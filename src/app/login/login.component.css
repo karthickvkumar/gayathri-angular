@@ -4,3 +4,8 @@
     text-decoration: underline;
     color: white;
 }
+.input{
+    width: 250px;
+    font-size: 18px;
+    margin-top: 20px;
+}
