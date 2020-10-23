@@ -1,0 +1,41 @@
+<h1>Home Page</h1>
+<div>
+    <label>Enter your Name:</label>
+    <input type="text" placeholder="Enter Name.." [(ngModel)]="employeeData.name"/>
+    <br>
+    <label>Enter your Designation:</label>
+    <input type="text" placeholder="Enter Designation.." [(ngModel)]="employeeData.designation"/>
+    <br>
+    <label>Enter your Company Name:</label>
+    <input type="text" placeholder="Enter Company Name.." [(ngModel)]="employeeData.companyName"/>
+    <br>
+    <label>Enter your Location:</label>
+    <input type="text" placeholder="Enter Location.." [(ngModel)]="employeeData.location"/>
+    <br>
+    <button (click)="onSubmitEmployee()">Submit User</button>
+</div>
+<table id="customers" >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Company Name</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of newEmployeeList; let index = index">
+            <td>{{employee.name}}</td>
+            <td>{{employee.designation}}</td>
+            <td>{{employee.companyName}}</td>
+            <td>{{employee.location}}</td>
+            <td>
+                <button (click)="onDeleteEmployee(index)">Delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="newEmployeeList.length == 0">
+            <td colspan="5">No Record Found</td>
+        </tr>
+    </tbody>
+</table>
