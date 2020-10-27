@@ -1,1 +1,45 @@
-<h2>register works!</h2>
+<div>
+    <h2>Please fill the form to Register</h2>
+    <label>Enter your First Name:</label>
+    <input type="text" placeholder="Enter first name.." [(ngModel)]="registerData.firstName"/>
+    <br>
+    <label>Enter your Last Name:</label>
+    <input type="text" placeholder="Enter last name.." [(ngModel)]="registerData.lastName"/>
+    <br>
+    <label>Enter your Email:</label>
+    <input type="email" placeholder="Enter email.." [(ngModel)]="registerData.email"/>
+    <br>
+    <label>Enter your Password:</label>
+    <input type="password" placeholder="Enter password.." [(ngModel)]="registerData.password"/>
+    <br>
+    <label>Select Date of Birth:</label>
+    <input type="date" [(ngModel)]="registerData.dob"/>
+    <br>
+    <label>Select your Gender:</label>
+    <input type="radio" value="male" name="gender" [(ngModel)]="registerData.gender"/>Male
+    <input type="radio" value="female" name="gender" [(ngModel)]="registerData.gender"/>Female
+    <input type="radio" value="others" name="gender" [(ngModel)]="registerData.gender"/>Others
+    <br>
+    <label>Select your Hobbies:</label>
+    <input type="checkbox" value="cricket" (change)="onChangeHobbies($event)">Cricket
+    <input type="checkbox" value="football" (change)="onChangeHobbies($event)">Football
+    <input type="checkbox" value="backetball" (change)="onChangeHobbies($event)">BasketBall
+    <input type="checkbox" value="hockey" (change)="onChangeHobbies($event)">Hockey
+    <input type="checkbox" value="chess" (change)="onChangeHobbies($event)">Chess
+    <br>
+    <label>Enter your Address</label>
+    <textarea placeholder="Enter address.." [(ngModel)]="registerData.address"></textarea>
+    <br>
+    <label>Select your State:</label>
+    <select [(ngModel)]="registerData.state">
+        <option value="" disabled>Please select any state</option>
+        <option>Chennai</option>
+        <option>Madurai</option>
+        <option>Trichy</option>
+        <option>Erode</option>
+        <option>Coimbatore</option>
+        <option>Tanjore</option>
+    </select>
+    <br>
+    <button (click)="onRegister()">Register</button>
+</div>
