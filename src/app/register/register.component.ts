@@ -75,8 +75,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister(){
-    this.registerError.gender = this.registerData.gender == '' ? true : false;
-    this.registerError.hobbies = this.registerData.hobbies == '' ? true : false;
-    this.registerError.state = this.registerData.state == '' ? true : false;
+    // this.registerError.gender = this.registerData.gender == '' ? true : false;
+    // this.registerError.hobbies = this.registerData.hobbies == '' ? true : false;
+    // this.registerError.state = this.registerData.state == '' ? true : false;
+    for(let key in this.registerError){
+      console.log(key)
+      this.registerError[key] = this.registerData[key] == '' ? true : false;
+    }
   }
 }
