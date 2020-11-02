@@ -1,24 +1,30 @@
 <div>
     <h2>Please fill the form to Register</h2>
     <label>Enter your First Name:</label>
-    <input type="text" placeholder="Enter first name.." [(ngModel)]="registerData.firstName"/>
+    <input type="text" placeholder="Enter first name.." [(ngModel)]="registerData.firstName" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" name="firstName"/>
+    <span class="error-msg" *ngIf="registerError.firstName">Please enter your first name</span>
     <br>
     <label>Enter your Last Name:</label>
-    <input type="text" placeholder="Enter last name.." [(ngModel)]="registerData.lastName"/>
+    <input type="text" placeholder="Enter last name.." [(ngModel)]="registerData.lastName" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" name="lastName"/>
+    <span class="error-msg" *ngIf="registerError.lastName">Please enter your last name</span>
     <br>
     <label>Enter your Email:</label>
-    <input type="email" placeholder="Enter email.." [(ngModel)]="registerData.email"/>
+    <input type="email" placeholder="Enter email.." [(ngModel)]="registerData.email" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" name="email"/>
+    <span class="error-msg" *ngIf="registerError.email">Please enter your email</span>
     <br>
     <label>Enter your Password:</label>
-    <input type="password" placeholder="Enter password.." [(ngModel)]="registerData.password"/>
+    <input type="password" placeholder="Enter password.." [(ngModel)]="registerData.password" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" name="password"/>
+    <span class="error-msg" *ngIf="registerError.password">Please enter your password</span>
     <br>
     <label>Select Date of Birth:</label>
-    <input type="date" [(ngModel)]="registerData.dob"/>
+    <input type="date" [(ngModel)]="registerData.dob" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" name="dob"/>
+    <span class="error-msg" *ngIf="registerError.dob">Please select your data of birth</span>
     <br>
     <label>Select your Gender:</label>
     <input type="radio" value="male" name="gender" [(ngModel)]="registerData.gender"/>Male
     <input type="radio" value="female" name="gender" [(ngModel)]="registerData.gender"/>Female
     <input type="radio" value="others" name="gender" [(ngModel)]="registerData.gender"/>Others
+    <span class="error-msg" *ngIf="registerError.gender">Please select your gender</span>
     <br>
     <label>Select your Hobbies:</label>
     <input type="checkbox" value="cricket" (change)="onChangeHobbies($event)">Cricket
@@ -26,9 +32,11 @@
     <input type="checkbox" value="backetball" (change)="onChangeHobbies($event)">BasketBall
     <input type="checkbox" value="hockey" (change)="onChangeHobbies($event)">Hockey
     <input type="checkbox" value="chess" (change)="onChangeHobbies($event)">Chess
+    <span class="error-msg" *ngIf="registerError.hobbies">Please select any one hobbies</span>
     <br>
     <label>Enter your Address</label>
-    <textarea placeholder="Enter address.." [(ngModel)]="registerData.address"></textarea>
+    <textarea placeholder="Enter address.." [(ngModel)]="registerData.address" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" name="address"></textarea>
+    <span class="error-msg" *ngIf="registerError.address">Please enter your address</span>
     <br>
     <label>Select your State:</label>
     <select [(ngModel)]="registerData.state">
@@ -40,6 +48,7 @@
         <option>Coimbatore</option>
         <option>Tanjore</option>
     </select>
+    <span class="error-msg" *ngIf="registerError.state">Please select your state</span>
     <br>
     <button (click)="onRegister()">Register</button>
 </div>

@@ -18,14 +18,25 @@ export class RegisterComponent implements OnInit {
     address: '',
     state: ''
   }
+
+  registerError : any = {
+    firstName: false,
+    lastName: false,
+    email: false,
+    password: false,
+    dob: false,
+    gender: false,
+    hobbies: false,
+    address: false,
+    state: false
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onChangeHobbies(event, index){
-    console.log(event.target.value, event.target.checked, index)
-    
+  onChangeHobbies(event){    
     if(event.target.checked){
       this.registerData.hobbies.push(event.target.value)
     }
@@ -37,7 +48,35 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerData)
   }
 
+  onInputFocus(event){
+    // if(event.target.name == 'firstName'){
+    //   this.registerError.firstName = false;
+    // }
+    // if(event.target.name == 'lastName'){
+    //   this.registerError.lastName = false;
+    // }
+    // if(event.target.name == 'email'){
+    //   this.registerError.email = false;
+    // }
+    this.registerError[event.target.name] = false;
+  }
+
+  onInputBlur(event){
+    // if(event.target.name == 'firstName'){
+    //   this.registerError.firstName = this.registerData.firstName == '' ? true : false
+    // }
+    // if(event.target.name == 'lastName'){
+    //   this.registerError.lastName = this.registerData.lastName == '' ? true : false
+    // }
+    // if(event.target.email == 'email'){
+    //   this.registerError.email = this.registerData.email == '' ? true : false
+    // }
+    this.registerError[event.target.name] = this.registerData[event.target.name] == '' ? true : false
+  }
+
   onRegister(){
-    console.log(this.registerData)
+    this.registerError.gender = this.registerData.gender == '' ? true : false;
+    this.registerError.hobbies = this.registerData.hobbies == '' ? true : false;
+    this.registerError.state = this.registerData.state == '' ? true : false;
   }
 }
