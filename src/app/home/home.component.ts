@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-home',
@@ -46,7 +47,10 @@ export class HomeComponent implements OnInit {
     companyName: '',
     location: ''
   }
-  constructor() { }
+
+  UserFromAPI : any = [];
+
+  constructor(private apiService : ApiService) { }
 
   ngOnInit(): void {
   }
@@ -66,4 +70,14 @@ export class HomeComponent implements OnInit {
     console.log(index)
     this.newEmployeeList.splice(index, 1)
   }
+
+  onLoadUser(){
+    this.apiService.listUser().subscribe((response : any) => {
+      console.log(response.data)
+      this.UserFromAPI = response.data;
+    }, (error) => {
+      console.log(error)
+    })
+  }
+
 }
