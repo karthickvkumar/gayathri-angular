@@ -73,7 +73,6 @@ export class HomeComponent implements OnInit {
 
   onLoadUser(){
     this.apiService.listUser().subscribe((response : any) => {
-      console.log(response.data)
       this.UserFromAPI = response.data;
     }, (error) => {
       console.log(error)

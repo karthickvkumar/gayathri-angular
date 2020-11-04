@@ -19,12 +19,17 @@ export class UpdateComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.formData)
-    this.apiService.createUser(this.formData).subscribe((response) => {
-      console.log(response)
-    }, (error) => {
-      console.log(error)
-    })
+    if(this.formData.name !== '' && this.formData.job !== ''){
+      this.apiService.createUser(this.formData).subscribe((response) => {
+        console.log(response)
+      }, (error) => {
+        console.log(error)
+      })
+    }
+    else{
+      alert("Invalid Data")
+    }
+   
   }
 
 }
