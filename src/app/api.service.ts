@@ -19,4 +19,19 @@ export class ApiService {
     let url : string = this.BaseURL + "/users";
     return this.http.post(url, data);
   }
+
+  editUser(user){
+    let url : string = this.BaseURL + "/users/2";
+    return this.http.put(url, user)
+  }
+
+  deleteUser(){
+    let url : string = this.BaseURL + "/users/2";
+    return this.http.delete(url);
+  }
+
+  login(data){
+    let url : string = this.BaseURL + '/login';
+    return this.http.post(url, data);
+  }
 }

@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ApiService } from './api.service';
 import { UpdateComponent } from './update/update.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UpdateComponent } from './update/update.component';
     RegisterComponent,
     HomeComponent,
     UpdateComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ export class UpdateComponent implements OnInit {
 
   onSubmit(){
     if(this.formData.name !== '' && this.formData.job !== ''){
-      this.apiService.createUser(this.formData).subscribe((response) => {
+      this.apiService.editUser(this.formData).subscribe((response) => {
         console.log(response)
       }, (error) => {
         console.log(error)
@@ -29,7 +29,14 @@ export class UpdateComponent implements OnInit {
     else{
       alert("Invalid Data")
     }
-   
+  }
+
+  onDelete(){
+    this.apiService.deleteUser().subscribe((response) => {
+      console.log(response)
+    }, (error) => {
+      console.log(error)
+    })
   }
 
 }

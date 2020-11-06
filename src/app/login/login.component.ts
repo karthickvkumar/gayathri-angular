@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import {LoginModel, LoginErrorModel} from './login.model'
 import * as Types from './login.model';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +25,8 @@ export class LoginComponent implements OnInit {
     captcha: ''
   }
 
+  passwordType : boolean = false;
+  passwordStrength : boolean = false;
 
   listOfName: string[] = ['mr.a', 'mr.b','mr.c']
   listOfScore: number[] = [100,90,80]
@@ -44,7 +48,7 @@ export class LoginComponent implements OnInit {
 
   displayText:boolean = true;
 
-  constructor() { }
+  constructor(private router : Router, private api : ApiService) { }
 
   ngOnInit(): void {
   }
@@ -55,11 +59,36 @@ export class LoginComponent implements OnInit {
 
   onLogin(): any{
     console.log(this.login)
-    // let request = {
-    //   username: this.userName,
-    //   password: this.password
-    // }
-    // console.log(request)
+    let data = {
+      email : this.login.username,
+      password : this.login.password
+    }
+    if(this.login.username != '' && this.login.password != ''){
+      this.api.login(data).subscribe((response) => {
+        console.log(response)
+        this.router.navigateByUrl('/home')
+      }, (error) => {
+        console.log(error)
+        alert(error.message)
+      })      
+    }
+    else{
+      alert('Please enter proper Username or Password')
+    }
+  }
+
+  checkPassword(){
+    this.passwordStrength = this.login.password.length > 8;
+  }
+
+  onFous(){
+    console.log('Password field is FOCU')
+    this.passwordType = true;
+  }
+  
+  onBlur(){
+    console.log('Password field is OUT OF FOCU')
+    this.passwordType = false;
   }
 
 }
