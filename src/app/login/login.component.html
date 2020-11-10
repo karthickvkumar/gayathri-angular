@@ -12,7 +12,7 @@
     <button (click)="onLogin()">LOGIN</button>
     <button (click)="toggleText()">Toggle Text</button>
     <br>
-    <button [routerLink]="['/home']">Login via HTML</button>
+    <button [routerLink]="['/mail/inbox']">Login via HTML</button>
     <div *ngIf="displayText">
         <h3>Username is {{login.username}}</h3>
         <h3>Username is {{login.password}}</h3>

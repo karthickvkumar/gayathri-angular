@@ -1,0 +1,26 @@
+.wrapper{
+  height: 90vh;
+  border: 2px solid;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  border: 2px solid;
+  height: 90vh;
+}
+.content{
+  width: 70vw;
+}
+
+.btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.active-btn{
+  color: white;
+  background-color: blue;
+}

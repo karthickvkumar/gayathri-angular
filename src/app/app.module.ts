@@ -11,6 +11,11 @@ import { HomeComponent } from './home/home.component';
 import { ApiService } from './api.service';
 import { UpdateComponent } from './update/update.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MailComponent } from './mail/mail.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { HeaderComponent } from './header/header.component';
+import { SentComponent } from './sent/sent.component';
+import { JunkComponent } from './junk/junk.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     UpdateComponent,
     PageNotFoundComponent,
+    MailComponent,
+    InboxComponent,
+    HeaderComponent,
+    SentComponent,
+    JunkComponent,
   ],
   imports: [
     BrowserModule,
