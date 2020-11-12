@@ -1,0 +1,6 @@
+<h1>Parent Component</h1>
+<label>Enter Email: </label>
+<input type="text" placeholder="Enter email.." [(ngModel)]="emailId" />
+<span>{{emailId}}</span>
+
+<app-children [data]="emailId"></app-children>

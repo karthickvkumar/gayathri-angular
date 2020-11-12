@@ -9,6 +9,7 @@ import { MailComponent } from './mail/mail.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { SentComponent } from './sent/sent.component';
 import {JunkComponent } from './junk/junk.component';
+import {ParentComponent } from './parent/parent.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path: 'sent', component: SentComponent},
     {path: 'junk', component: JunkComponent}
   ]},
+  {path:'parent', component: ParentComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 

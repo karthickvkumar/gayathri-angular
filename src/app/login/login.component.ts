@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
 // import {LoginModel, LoginErrorModel} from './login.model'
 import * as Types from './login.model';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnChanges, DoCheck {
 
   // userName: string = '';
   // password: string = '';
@@ -51,6 +51,15 @@ export class LoginComponent implements OnInit {
   constructor(private router : Router, private api : ApiService) { }
 
   ngOnInit(): void {
+    //alert('Trigger NG-ONINTI')
+  }
+
+  ngOnChanges(){
+    console.log("Triggering Input Values")
+  }
+
+  ngDoCheck(){
+    console.log("Model Values are changing")
   }
 
   toggleText(){

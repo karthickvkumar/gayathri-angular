@@ -16,6 +16,8 @@ import { InboxComponent } from './inbox/inbox.component';
 import { HeaderComponent } from './header/header.component';
 import { SentComponent } from './sent/sent.component';
 import { JunkComponent } from './junk/junk.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildrenComponent } from './children/children.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { JunkComponent } from './junk/junk.component';
     HeaderComponent,
     SentComponent,
     JunkComponent,
+    ParentComponent,
+    ChildrenComponent,
   ],
   imports: [
     BrowserModule,
