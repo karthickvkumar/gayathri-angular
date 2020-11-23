@@ -2,5 +2,6 @@
 <label>Enter Email: </label>
 <input type="text" placeholder="Enter email.." [(ngModel)]="emailId" />
 <span>{{emailId}}</span>
-
-<app-children [data]="emailId"></app-children>
+<span>{{message}}</span>
+<button [routerLink]="['/mail']">GO to Mail Page</button>
+<app-children [data]="emailId" (messageEvent)="onReceiveEvent($event)"></app-children>

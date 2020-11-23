@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+  public sharedData = new BehaviorSubject('');
+  public sharedInfo = this.sharedData.asObservable();
 
   BaseURL : string = "https://reqres.in/api";
 
@@ -33,5 +37,9 @@ export class ApiService {
   login(data){
     let url : string = this.BaseURL + '/login';
     return this.http.post(url, data);
+  }
+
+  updateInformation(message){
+    this.sharedData.next(message)
   }
 }

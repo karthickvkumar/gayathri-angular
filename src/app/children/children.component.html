@@ -1,2 +1,4 @@
 <h3>Child Component</h3>
 <span>This is the Parent Email - {{userEmail}}</span>
+<br>
+<input type="text" placeholder="Enter value..." [(ngModel)]="message" (ngModelChange)="onMessageChange()">

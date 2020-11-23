@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-inbox',
@@ -7,9 +8,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class InboxComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  inboxValue :any  = {
+    value: ''
+  }
+  constructor(private apiService : ApiService) { }
 
   ngOnInit(): void {
+    this.apiService.sharedInfo.subscribe((data) => {
+      console.log(data)
+      this.inboxValue.value = data
+    })
   }
 
   ngOnDestroy(){

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { InboxComponent } from '../inbox/inbox.component';
 
 @Component({
   selector: 'app-mail',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MailComponent implements OnInit {
 
+  @ViewChild(InboxComponent, {static: false}) private inboxReference;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onLoad(){
+    console.log(this.inboxReference)
+  }
 }

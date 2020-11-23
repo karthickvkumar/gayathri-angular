@@ -8,6 +8,7 @@
       [routerLinkActiveOptions]="{exact: true}">Sent</button>
       <button class="btn" [routerLink]="['/mail/junk']"  [routerLinkActive]="['active-btn']"
       [routerLinkActiveOptions]="{exact: true}">Junk</button>
+      <button (click)="onLoad()">Load Data</button>
     </div>
     <div class="content">
       <router-outlet></router-outlet>
